@@ -169,3 +169,13 @@ def test_compaction_keeps_recent_turns():
     recent = [m for m in messages if m["role"] == "assistant"][-run_agent.KEEP_RECENT:]
     assert all(m.get("reasoning_content") == big for m in recent)          # recent turns untouched
     assert "content omitted" in messages[2]["tool_calls"][0]["function"]["arguments"]
+
+
+def test_format_follows_an_explicit_ratio(project):
+    root, server = project
+    index = INDEX.replace("width={1080} height={1920}", "width={1920} height={1080}")
+    demo = write(root / "src" / "Demo", {"index.tsx": index, "Scene.tsx": "export const Scene = () => null;"})
+    server.ORIGINAL_BRIEF = "A 4-second horizontal (16:9) promo. Show the vertical clips inside phone frames."
+    assert not any("asks for a" in n for n in server.fidelity(demo))
+    server.ORIGINAL_BRIEF = "A 4-second vertical reel."
+    assert any("asks for a vertical" in n for n in server.fidelity(demo))

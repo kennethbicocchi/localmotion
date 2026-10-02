@@ -89,7 +89,25 @@ class VideoBot:
         models = httpx.get(f"{LMSTUDIO}/api/v0/models", timeout=10).json()["data"]
         return [m["id"] for m in models if m.get("type") == "vlm"]
 
+    def ensure_server(self) -> None:
+        """Start LM Studio headless (daemon + API server) if nothing answers, e.g. after a reboot."""
+        try:
+            httpx.get(f"{LMSTUDIO}/api/v0/models", timeout=5)
+            return
+        except httpx.HTTPError:
+            pass
+        subprocess.run([str(LMS), "daemon", "up"], capture_output=True, timeout=120)
+        subprocess.run([str(LMS), "server", "start"], capture_output=True, timeout=120)
+        for _ in range(30):
+            try:
+                httpx.get(f"{LMSTUDIO}/api/v0/models", timeout=5)
+                return
+            except httpx.HTTPError:
+                time.sleep(2)
+        raise RuntimeError("LM Studio is not running and could not be started (lms daemon up / lms server start).")
+
     def ensure_model(self, model: str) -> None:
+        self.ensure_server()
         models = {m["id"]: m for m in httpx.get(f"{LMSTUDIO}/api/v0/models", timeout=10).json()["data"]}
         if models.get(model, {}).get("state") == "loaded":
             return
@@ -396,6 +414,10 @@ class VideoBot:
 
     def serve(self) -> None:
         threading.Thread(target=self.worker, daemon=True).start()
+        try:
+            self.bot.send(f"localmotion bot is online. {self.gpu()}. Send /video <brief> to start.")
+        except Exception:
+            pass  # no network yet: the polling loop below retries
         offset = None
         while True:
             try:

@@ -8,7 +8,8 @@ All runs were on one RTX 3090 (power capped at 260 W), LM Studio, unattended. Sc
 |---|---|---|---|---|---|---|
 | NEON DRIFT, racing-game trailer | 45 s, 9:16 | ✅ rendered | 60 min | 6, 6, 6 | 7 | Full HUD, split-screen duel, podium; every figure from the brief on screen |
 | Blockwise, sandbox-game pitch | 60 s, 16:9 | ✅ rendered | 95 min | 3, 6, 6 | 6 | Isometric voxel world, crafting grid, night with torches, achievements; elements a bit small for 16:9 |
-| ORBITAL, space-sim launch | 50 s, 16:9 | ⏳ first attempt cut by the reasoning budget mid-thought; auto-rendered at 30 s | 38 min | n/a | n/a | Led to the "sent back to work" recovery and to fidelity against the original prompt |
+| ORBITAL, space-sim launch | 50 s, 16:9 | ✅ rendered (2nd attempt) | 86 min | 7, 6 | 6.5 | Mission-control HUD, wireframe Earth, telemetry, docking; all brief content on screen. The 1st attempt was cut by the reasoning budget mid-thought (auto-rendered, incomplete), which led to the "sent back to work" recovery |
+| localmotion promo | 45 s, 16:9 | ✅ rendered | 57 min | 7, 5, 7 | 7 | Terminal hook, GPU chip, four steps, 0/0/1 counters, the sample videos in device frames; soundtrack added afterwards by a human |
 
 ## Model comparison (same 60 s, three-style brand film; earlier agent loop, 48k context)
 

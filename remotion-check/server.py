@@ -312,10 +312,19 @@ def fidelity(d: Path) -> list[str]:
         w, h = re.search(r"width=\{(\d+)\}", idx), re.search(r"height=\{(\d+)\}", idx)
         if w and h:
             vertical = int(h.group(1)) > int(w.group(1))
-            if re.search(r"16:9|horizontal|orizzontale|landscape|1920\s*x\s*1080", brief, re.I) and vertical:
-                notes.append("The brief asks for a horizontal video but the composition is vertical.")
-            if re.search(r"9:16|vertical|verticale|reel|story|tiktok|1080\s*x\s*1920", brief, re.I) and not vertical:
-                notes.append("The brief asks for a vertical video but the composition is horizontal.")
+            # An explicit ratio wins over words like "vertical", which may describe something inside the video
+            ratio = re.search(r"\b(16:9|9:16|1920\s*x\s*1080|1080\s*x\s*1920)\b", brief)
+            if ratio:
+                wants_vertical = ratio.group(1).startswith("9:16") or ratio.group(1).startswith("1080")
+            elif re.search(r"\b(horizontal|orizzontale|landscape)\b", brief, re.I):
+                wants_vertical = False
+            elif re.search(r"\b(vertical|verticale|reel|story|tiktok)\b", brief, re.I):
+                wants_vertical = True
+            else:
+                wants_vertical = None
+            if wants_vertical is not None and wants_vertical != vertical:
+                notes.append(f"The brief asks for a {'vertical' if wants_vertical else 'horizontal'} video but the "
+                             f"composition is {'vertical' if vertical else 'horizontal'}.")
         timeline = scene_timeline(d.name)
         total = sum(length for _, _, length in timeline)
         if duration and total:

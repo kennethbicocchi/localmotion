@@ -8,6 +8,12 @@ You write a brief, or paste a script, and attach photos if you have them. A loca
 
 Nothing leaves your computer except the finished video. There are no tokens to buy, no subscriptions and no per-video cost: every video is free once you have the hardware.
 
+<p align="center">
+  <a href="docs/assets/localmotion-promo.mp4"><img src="docs/assets/localmotion-promo.gif" alt="The localmotion promo video" width="100%"></a>
+</p>
+
+> **This promo was made with localmotion itself.** Qwen 3.8 27B wrote, checked and rendered it on one RTX 3090, unattended, from [this brief](examples/briefs/localmotion-promo.txt), in about an hour, at zero tokens. The only human addition is the soundtrack. ▶ [Watch the full video with sound](docs/assets/localmotion-promo.mp4) · [see its source code](examples/localmotion-promo/).
+
 <table>
 <tr>
 <td align="center" width="25%"><img src="docs/assets/neon-drift.gif" alt="NEON DRIFT racing game trailer" width="100%"><br><b>NEON DRIFT</b><br><sub>45 s racing-game trailer with HUD, split-screen duel, podium. 60 min, reviewer 6/10, my 7/10</sub></td>
@@ -36,6 +42,7 @@ A 27B model is clever enough to write good Remotion code. What it lacks is what 
 - **A 24 GB GPU** (tested on an RTX 3090) for Qwen 3.8 27B Q4 with vision. Smaller GPUs can run smaller models with the same tools, with lower quality.
 - **[LM Studio](https://lmstudio.ai)** (or its Bionic edition), **Node.js 20+**, **[uv](https://docs.astral.sh/uv/)**, and ffmpeg (optional).
 - Time: a complex 45-60 s video takes **60-95 minutes**, and a simple 30 s reel with photos ~15 minutes. Start it from your phone and do something else.
+- Internet only for two things: the fonts (loaded from Google Fonts at render time) and Telegram delivery. The model and all the work stay on your machine.
 
 ## Quickstart
 
@@ -47,7 +54,7 @@ git clone <this repo> localmotion && cd localmotion
 
 1. In LM Studio, download **Qwen 3.8 27B Q4_K_M** together with its `mmproj` vision file, and set it up as in [docs/INSTALL.md](docs/INSTALL.md): 8-bit KV cache, 72k context.
 2. Add the two MCP servers printed by `install.sh` to LM Studio.
-3. Make your first video, in whichever way suits you:
+3. Make your first video, in whichever way suits you (full guide, commands and troubleshooting in **[docs/USAGE.md](docs/USAGE.md)**):
 
 | From | How |
 |---|---|
@@ -80,9 +87,9 @@ skills/              the skill (instructions) for LM Studio / Bionic
 agent/               the agent loop (also used by the bot and for testing)
 telegram_bot/        setup wizard + bot: remote briefs, progress, delivery
 remotion-template/   a ready Remotion project: kit + example
-examples/briefs/     the briefs behind the showcased videos
+examples/            the briefs behind the showcased videos, and the full source of the promo
 tests/, scripts/     unit tests, smoke test
-docs/                install, testing, results, assets
+docs/                install, usage, testing, results, assets
 ```
 
 ## Licenses and credits
@@ -91,3 +98,4 @@ docs/                install, testing, results, assets
 - **[Remotion](https://www.remotion.dev/license)** has its own license: free for individuals and small teams, a company license above that. Check it before using localmotion commercially.
 - Model weights keep their own licenses (Qwen: see its model card). Fonts come from Google Fonts (open licenses).
 - The example photos in `remotion-template/public/example` were generated locally with FLUX.2 [klein].
+- The promo's soundtrack is the author's and is not covered by the MIT license; it's not included as a separate file.
