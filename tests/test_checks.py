@@ -61,6 +61,15 @@ export const Scene = () => {
     assert "<Img>" in text
 
 
+def test_html_entity_in_string_is_flagged(project):
+    root, server = project
+    demo = write(root / "src" / "Demo", {"index.tsx": INDEX, "Scene.tsx": """
+export const Scene = () => { const label = "&gt;&gt; TRANSFER BURN"; return <div>{label} &amp; more</div>; };
+"""})
+    _, warnings = server.static_checks(demo)
+    assert sum("HTML entity" in w for w in warnings) == 1  # the string, not the JSX text
+
+
 def test_clean_scene_passes(project):
     root, server = project
     demo = write(root / "src" / "Demo", {"index.tsx": INDEX, "Scene.tsx": """

@@ -130,6 +130,9 @@ WARNINGS = [
      "objectFit 'contain' leaves empty bands: for photos use the kit's <Photo> (fills the box, centers the subject)."),
     (r"[\U0001F300-\U0001FAFF☀-⛿]",
      "Emoji in the video look amateurish and differ between systems. Use SVG shapes or text."),
+    (r"[\"'`][^\"'`\n]*&(gt|lt|amp|apos|quot|nbsp);[^\"'`\n]*[\"'`]",
+     "HTML entity inside a JavaScript string: it shows up literally on screen (\"&gt;&gt;\" instead of \">>\"). "
+     "Write the character itself inside strings; entities only work in JSX text between tags."),
     (r"fontSize:\s*(1\d|2\d|3[01])\b",
      "Text under 32 px is unreadable on a phone at 1080x1920. Minimum 40 px for text, 32 px only for minor labels."),
 ]
