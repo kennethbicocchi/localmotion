@@ -87,7 +87,7 @@ docs/                install, testing, results, assets
 
 ## Licenses and credits
 
-- localmotion's own code: see [LICENSE](LICENSE).
+- localmotion's own code: [MIT](LICENSE).
 - **[Remotion](https://www.remotion.dev/license)** has its own license: free for individuals and small teams, a company license above that. Check it before using localmotion commercially.
 - Model weights keep their own licenses (Qwen: see its model card). Fonts come from Google Fonts (open licenses).
 - The example photos in `remotion-template/public/example` were generated locally with FLUX.2 [klein].
