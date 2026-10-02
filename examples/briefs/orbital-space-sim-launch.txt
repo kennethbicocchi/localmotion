@@ -1,0 +1,10 @@
+Make a 50-second horizontal (16:9) launch film for "ORBITAL", a fictional satellite-internet company, staged like a space-simulator game: everything seen from a ship's cockpit or a mission-control screen. Real animation, not slides.
+
+Content to use exactly:
+- Opening line: "Somewhere, someone is still offline."
+- Mission: "ORBITAL-1: 600 satellites, one network."
+- Three numbers shown as telemetry: 550 km altitude, 40 ms latency, 1 Gbps per user.
+- A docking sequence where the last satellite clicks into the constellation.
+- Ending: "Connected. Everywhere." then "orbital.example — launching 2027".
+
+Visual ideas (adapt them, invent the rest): a cockpit HUD with radar and target brackets, a rotating wireframe Earth with orbit lines being drawn, satellites lighting up one by one, a warp/hyperspace transition between acts, starfield parallax, telemetry readouts that count up, a mission-control map with network links connecting. Make it cinematic and fast.

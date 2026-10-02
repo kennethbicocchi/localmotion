@@ -1,0 +1,7 @@
+Make a 60-second presentation video (16:9, 1920x1080) that plays like a Minecraft gameplay session, as an homage to its style (don't write the Minecraft name or draw its logo).
+
+Context: a pitch for "Blockwise", a fictional startup whose app helps small teams build products one step at a time. Tell it as a game session: spawning in an empty world (the problem: a blank page), gathering resources (the team and the idea), crafting (combining features), building the base block by block (the product taking shape), surviving the first night (launch day), and reaching new biomes (growth).
+
+Use the gameplay language visually: a voxel world built block by block, pixel textures, an inventory hotbar, a crafting grid, mining, an XP bar filling up, achievement toasts, a day/night cycle. Invent all the copy yourself: in English, short and punchy, like a real pitch. No statistics or numbers about real companies.
+
+Make it lively and rhythmic. Use Remotion.

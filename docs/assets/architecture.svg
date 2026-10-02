@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="960" height="540" rx="18" fill="#0f1218"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b93a5"/>
+    </marker>
+    <style>
+      .box { fill: #171c25; stroke: #2b3342; stroke-width: 1.5; }
+      .hot { fill: #13261f; stroke: #4ee0a8; stroke-width: 1.5; }
+      .t { fill: #eef1f6; font-size: 15px; font-weight: 700; }
+      .s { fill: #9aa3b5; font-size: 12px; }
+      .a { fill: #4ee0a8; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+      .line { stroke: #8b93a5; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <text x="40" y="44" class="a">YOU, ANYWHERE</text>
+  <rect x="40" y="60" width="200" height="74" rx="12" class="box"/>
+  <text x="58" y="90" class="t">Telegram bot</text>
+  <text x="58" y="112" class="s">/video &lt;brief&gt; + photos</text>
+  <rect x="40" y="150" width="200" height="74" rx="12" class="box"/>
+  <text x="58" y="180" class="t">LM Studio / Bionic chat</text>
+  <text x="58" y="202" class="s">its own loop, same skill + tools</text>
+
+  <text x="300" y="44" class="a">ON YOUR PC</text>
+  <rect x="300" y="60" width="300" height="164" rx="12" class="hot"/>
+  <text x="320" y="90" class="t">Agent loop (bot · command line)</text>
+  <text x="320" y="114" class="s">skill as instructions · PLAN.md as memory</text>
+  <text x="320" y="134" class="s">history compaction + workspace map</text>
+  <text x="320" y="154" class="s">recovers from stops, budget warnings</text>
+  <text x="320" y="174" class="s">auto-render safety net</text>
+  <text x="320" y="200" class="s">≈ 60–95 min for a complex 60 s video</text>
+
+  <rect x="660" y="60" width="260" height="164" rx="12" class="box"/>
+  <text x="680" y="90" class="t">LM Studio server</text>
+  <text x="680" y="114" class="s">Qwen 3.8 27B Q4_K_M + vision</text>
+  <text x="680" y="134" class="s">72k context (8-bit KV cache)</text>
+  <text x="680" y="154" class="s">one 24 GB GPU</text>
+  <text x="680" y="200" class="a">0 TOKENS · 0 API BILLS</text>
+
+  <rect x="300" y="280" width="300" height="200" rx="12" class="hot"/>
+  <text x="320" y="310" class="t">remotion-check (MCP)</text>
+  <text x="320" y="336" class="s">check_code: TypeScript, ESLint, Remotion</text>
+  <text x="320" y="354" class="s">rules, timing, fidelity to the brief</text>
+  <text x="320" y="380" class="s">describe_media: photo focus points</text>
+  <text x="320" y="404" class="s">review_frames: pacing, empty bands,</text>
+  <text x="320" y="422" class="s">art-director review by the vision model</text>
+  <text x="320" y="448" class="s">render_video: MP4 → Telegram</text>
+
+  <rect x="660" y="280" width="260" height="200" rx="12" class="box"/>
+  <text x="680" y="310" class="t">Remotion project</text>
+  <text x="680" y="336" class="s">kit: Photo, RevealLine, timeline,</text>
+  <text x="680" y="354" class="s">fonts, effects, safe areas, timing</text>
+  <text x="680" y="380" class="s">Example: a reference video</text>
+  <text x="680" y="404" class="s">src/&lt;YourVideo&gt;/ written by the</text>
+  <text x="680" y="422" class="s">model, one scene per file</text>
+
+  <rect x="40" y="280" width="200" height="200" rx="12" class="box"/>
+  <text x="58" y="310" class="t">The result</text>
+  <text x="58" y="336" class="s">MP4 sent to Telegram</text>
+  <text x="58" y="358" class="s">+ contact sheet</text>
+  <text x="58" y="380" class="s">+ the agent's honest report</text>
+  <text x="58" y="402" class="s">(scores, what's left)</text>
+
+  <path d="M240 97 H296" class="line"/>
+  <path d="M240 205 H268 V300 H296" class="line" stroke-dasharray="5 4"/>
+  <path d="M600 142 H656" class="line"/>
+  <path d="M450 224 V276" class="line"/>
+  <path d="M600 380 H656" class="line"/>
+  <path d="M300 380 H244" class="line"/>
+  <text x="608" y="132" class="s">calls</text>
+  <text x="458" y="256" class="s">tools</text>
+</svg>

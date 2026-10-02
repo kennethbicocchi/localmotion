@@ -1,0 +1,10 @@
+Make a 45-second vertical (9:16) launch trailer for "NEON DRIFT", a fictional arcade racing game. It must feel like real gameplay footage with a game HUD, not slides.
+
+Content to use exactly:
+- Opening countdown: 3, 2, 1, "GO!"
+- Tagline: "Every corner is a decision."
+- Features: 24 tracks, 12 cars, online duels up to 8 players.
+- A rival appears in a split-screen duel and you overtake on the last lap.
+- Ending: podium with "1ST", then "Out November 14 — €19.99".
+
+Visual ideas (adapt them, invent the rest): a top-down or chase-camera car drawn as vector art, neon city, speed lines, a speedometer and boost bar, lap timer, drift sparks, a camera shake on boost, glitchy transitions between sections. Keep it fast and punchy.

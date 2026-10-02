@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Runs, jobs and logs (they contain your briefs and local paths)
+jobs/
+*.jsonl
+*.out
+*.log
+*.pid
+# Remotion
+remotion-template/node_modules/
+remotion-template/out/
+# Downloaded automatically by Remotion
+.remotion/
+# Local tool state
+.claude/

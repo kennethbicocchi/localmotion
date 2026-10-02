@@ -1,0 +1,1 @@
+A 16-second vertical teaser for a short film called "The Last Keeper": an old lighthouse keeper who has kept the light of Capo Nero for forty years. Documentary mood, slow and warm. Use the three photos in public/example. End on the line "The light never went out."
